@@ -1,2 +1,2 @@
-# meclinic
+# me-clinic
 
