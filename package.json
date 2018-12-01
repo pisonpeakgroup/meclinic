@@ -1,0 +1,30 @@
+{
+  "name": "meclinic",
+  "version": "1.0.0",
+  "description": "health app",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pisonpeakgroup/meclinic.git"
+  },
+  "keywords": [
+    "Me",
+    "Clinic"
+  ],
+  "author": "Ubine M J",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pisonpeakgroup/meclinic/issues"
+  },
+  "homepage": "https://github.com/pisonpeakgroup/meclinic#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "socket.io": "^2.2.0"
+  }
+}
