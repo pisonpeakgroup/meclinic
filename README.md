@@ -1,3 +1,8 @@
+What?
+======
+This API is written in JavaScript for NodeJS and requires MongoDB and other libraries used to be running. Mongoose is used to connect to MongoDB, Define the detabase Schema and read/write data. Express is used as the we server.
+
+
 About
 =====
 
@@ -75,3 +80,33 @@ You'll see `client.html` use `adapter.js`. This "library" just normalizes the
 WebRTC API, which will only be necessary while WebRTC is making its way through
 the standards process. Once everything is standardized and functions are
 de-prefixed in the browsers, this won't be necessary anymore.
+
+
+
+
+====================================================================================================
+
+# Node-fb-login
+Demo application that shows how to implement Facebook login with  Node.js/Express on backend that is implementing REST API.
+
+# About
+This part of the application was created to server a login/sign up function for our node api 
+
+# What you need to install
+* [Node.js](https://nodejs.org/en/)
+* [Gulp](http://gulpjs.com/)
+* [MongoDB](https://www.mongodb.com/)
+
+
+# How To Start Application?
+* Start MongoDB - our application expects that there is `fb-demo` database in MongoDB
+* Go to [frontend]
+    * `npm install`
+    * `ng serve`
+* Go to [backend]
+    * `npm install`
+    * `gulp develop`
+    
+# License
+angular2-node-fb-login is released under [MIT License](https://opensource.org/licenses/MIT).
+
