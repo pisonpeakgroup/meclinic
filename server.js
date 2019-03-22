@@ -2,14 +2,14 @@
 /*** SETUP ***/
 /*************/
 //set up dependencies
-var rootpath = require('rootpath');
+//var rootpath = require('rootpath');
 var PORT = process.env.PORT || 8080;
 var express = require('express');
 var mongoose = require('mongoose');
-var passport = require('passport');
-var jwt = require('./src/middleware/jwt');
-var  authenticate  = require('./src/middleware/authenticate');
-var expressJwt = require('express-jwt');
+//var passport = require('passport');
+//var jwt = require('./src/middleware/jwt');
+//var  authenticate  = require('./src/middleware/authenticate');
+//var expressJwt = require('express-jwt');
 var router = express.Router();
 var errorHandler = require('./src/controllers/error-handler');
 var cors = require('cors'); 
@@ -17,13 +17,13 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var main = express();
 var server = http.createServer(main);
-var realRoutes = require('./src/routes/videocall');
-var routes = require('./src/controllers/videocallControllers');
+//var realRoutes = require('./src/routes/videocall');
+//var routes = require('./src/controllers/videocallControllers');
 var User = require('./src/models/user.model');
-var csrfCheck  = require('./src/middleware/csrfCheck');
-var Session = require('./src/models/UtilsSession');
-var initSession = require('./src/utils/utils');
-var isEmail = require('./src/utils/utils');
+//var csrfCheck  = require('./src/middleware/csrfCheck');
+//var Session = require('./src/models/UtilsSession');
+//var initSession = require('./src/utils/utils');
+//var isEmail = require('./src/utils/utils');
 var usersRoute = require('./src/routes/users');
 var io  = require('socket.io').listen(server);
 
@@ -67,7 +67,7 @@ main.use(bodyParser.urlencoded({
 }));
 main.use(bodyParser.json());
 
-
+// A simple Health Check route
 router.route('/health-check').get(function(req, res) {
   res.status(200);
   res.send('Hello World');
