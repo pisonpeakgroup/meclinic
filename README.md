@@ -5,7 +5,17 @@ This API is written in JavaScript for NodeJS and requires MongoDB and other libr
 
 About
 =====
+To create;
+        ======REST=======
 
+HTTP/REST     CRUD        SQL
+
+POST         Create     INSERT
+GET          Read       SELECT
+PUT          Update     UPDATE
+DELETE       Delete     DELETE
+
+ALSO;
 This is a "simple", but complete example of how to utilize WebRTC to do peer to
 peer voice and video chatting between two or more people.
 
