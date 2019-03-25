@@ -2,13 +2,10 @@
 /*** SETUP ***/
 /*************/
 //set up dependencies
-var rootpath = require('rootpath');
 var PORT = process.env.PORT || 8080;
 var express = require('express');
 var mongoose = require('mongoose');
-var passport = require('passport');
 var router = express.Router();
-var errorHandler = require('./src/controllers/error-handler');
 var cors = require('cors'); 
 var http = require('http');
 var bodyParser = require('body-parser');
@@ -26,9 +23,6 @@ main.set('port', (process.env.PORT || 8080));
 /**************/
 /*** CONFIG ***/
 /**************/
-var passportConfig = require('./src/routes/facebookPassport');
-var mongoose1 = require('./src/models/mongoose1');
-
 
 // Configuring the database
 mongoose.Promise = global.Promise;
@@ -73,8 +67,6 @@ main.use('/register', usersRoute);
 main.use('/register', User);
 main.use('/login', Session);
 main.use('/me',authenticate);
-main.use('facebookProvider.id', mongoose1);
-main.use('ValidationError', errorHandler);
 
 
 module.exports = router;
