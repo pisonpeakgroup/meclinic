@@ -7,14 +7,10 @@ var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
 var cors = require('cors'); 
-var http = require('http');
 var bodyParser = require('body-parser');
 var main = express();
-var server = http.createServer(main);
 var User = require('./src/models/user.model');
 var usersRoute = require('./src/routes/users');
-var io  = require('socket.io').listen(server);
-
 
 //set port || 8080
 main.set('port', (process.env.PORT || 8080));
@@ -23,8 +19,7 @@ main.set('port', (process.env.PORT || 8080));
 /**************/
 /*** CONFIG ***/
 /**************/
-
-// Configuring the database
+// Configuring the database (using Mongoose form app to MongoDB)
 mongoose.Promise = global.Promise;
 // Connecting to the database
 var  dbconfig = require('./src/config/db');
@@ -37,7 +32,7 @@ mongoose.connect(dbconfig.url, { useNewUrlParser: true })
 });
 
 
-// enable cors
+// our rest API requirements (Cors)
 var corsOption = {
   origin: true,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
@@ -48,7 +43,7 @@ main.use(cors(corsOption));
 
 
 
-//rest API requirements
+//our rest API requirements (Body-parser)
 main.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -57,16 +52,16 @@ main.use(bodyParser.json());
 
 
 //Instructing server to listen for PORT
-server.listen(PORT, null, function() {
+main.listen(PORT, null, function() {
     console.log("Listening on port " + PORT);
 });
 
 
-//Rooot file paths
+//Route file paths
 main.use('/register', usersRoute);
 main.use('/register', User);
-main.use('/login', Session);
-main.use('/me',authenticate);
+main.use('/login', usersRoute);
+main.use('/me',usersRoute);
 
 
 module.exports = router;
