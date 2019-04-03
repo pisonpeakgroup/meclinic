@@ -33,39 +33,8 @@ const usersController = {
         }       
     }
    
-    
-};
-
-const usersFeatures = {
-    add: function (req, res) {
-        const body = req.body;
-
-        if (!body.country) {
-            res.status(400).send({
-                message: 'A country input is required.'
-            });
-        } else if (!body.age) {
-            res.status(400).send({
-                message: 'An age is required.'
-            })
-        } else {
-            const user = new User(body);
-            user.save((err) => {
-                if (err) {
-                    res.status(500).send({
-                        message: 'An error occurred.',
-                        error: err
-                    });
-                } else {
-                    res.status(200).send({
-                        user: user
-                    });
-                }
-            });
-        }       
-    }
-   
-    
+  
+        
 };
 
 
@@ -97,43 +66,8 @@ const usersFeatures = {
             });
         }       
     }
-   
     
 };
-
-
-const usersFeatures = {
-    add: function (req, res) {
-        const body = req.body;
-
-        if (!body.firstName) {
-            res.status(400).send({
-                message: 'A firstName input is required.'
-            });
-        } else if (!body.surname) {
-            res.status(400).send({
-                message: 'A surname is required.'
-            })
-        } else {
-            const user = new User(body);
-            user.save((err) => {
-                if (err) {
-                    res.status(500).send({
-                        message: 'An error occurred.',
-                        error: err
-                    });
-                } else {
-                    res.status(200).send({
-                        user: user
-                    });
-                }
-            });
-        }       
-    }
-   
-    
-};
-
 //new controllers
 
 
