@@ -9,6 +9,8 @@ const Routes = {
         router.route('/users')
             .get(UsersController.retrieve)
             .post(UsersController.add);
+
+        return router;
     }
 };
 
