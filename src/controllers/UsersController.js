@@ -31,6 +31,10 @@ const usersController = {
                 }
             });
         }
+    },
+
+    retrieve: function (req, res) {
+
     }
 };
 
