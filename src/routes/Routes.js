@@ -4,10 +4,12 @@
 
 const UsersController = require('./../controllers/UsersController');
 
-const route = function (router) {
-    router.route('/users')
-        .get(UsersController.retrieve)
-        .post(UsersController.add);
+const Routes = {
+    route: function (router) {
+        router.route('/users')
+            .get(UsersController.retrieve)
+            .post(UsersController.add);
+    }
 };
 
-module.exports = route;
+module.exports = Routes;
