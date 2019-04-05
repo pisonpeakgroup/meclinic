@@ -8,31 +8,33 @@ const UsersController = require('./../controllers/UsersController');
 
 
 const route = function (router) {
+
+    //POST Routes
     router.route('/users')
         .post(UsersController.add);
+
+        router.route('/users:all')
+        .post(UsersController.add);
+
+        router.route('/users:delete')
+        .post(UsersController.add);
+
+        router.route('/users:update')
+        .post(UsersController.add);
+
     
-    router.get('/users', async (req, res) => {
-                console.log('Your welcome to our registration page');
-                next()
-                .get(usersFeatures.add);
-                next()
-            });
-    router.get('/users:id', async (req, res) => {
-          res.send('Your welcome to our login page');     
-            });
+        //GET Routes
+    router.rout('/users')
+        .get(UsersController.add);
 
-    router.get('/users:all', async (req, res) => {
-                  res.send('Your welcome to our logout page,your always welcome');   
-             });
+       router.rout('/users:all')
+        .get(UsersController.add);
 
-    router.get('/users:delete', async (req, res) => {
-                   res.send('we are sorry to see you delete your account');
-             });
-             
-    router.get('/users:update', async (req, res) => {
-                res.send('Welcome to the edit page');
-          });
-                
+       router.rout('/users:delete')
+        .get(UsersController.add);
+        
+       router.rout('/users:update')
+        .get(UsersController.add);              
         
        };
 

@@ -30,18 +30,10 @@ const usersController = {
                     });
                 }
             });
-        }       
-    }
-   
-  
+        }  
         
-};
 
-
-const usersFeatures = {
-    add: function (req, res) {
-        const body = req.body;
-
+        //new controllers
         if (!body.sex) {
             res.status(400).send({
                 message: 'A input input is required.'
@@ -64,11 +56,68 @@ const usersFeatures = {
                     });
                 }
             });
+        }
+        
+        
+        if (!body.surname) {
+            res.status(400).send({
+                message: 'A surname address is required.'
+            });
+        } else if (!body.firstName) {
+            res.status(400).send({
+                message: 'A firstName is required.'
+            })
+        } else {
+            const user = new User(body);
+            user.save((err) => {
+                if (err) {
+                    res.status(500).send({
+                        message: 'An error occurred.',
+                        error: err
+                    });
+                } else {
+                    res.status(200).send({
+                        user: user
+                    });
+                }
+            });
+        } 
+        
+        
+
+        if (!body.age) {
+            res.status(400).send({
+                message: 'An age input is required.'
+            });
+        } else if (!body.country) {
+            res.status(400).send({
+                message: 'A country is required.'
+            })
+        } else {
+            const user = new User(body);
+            user.save((err) => {
+                if (err) {
+                    res.status(500).send({
+                        message: 'An error occurred.',
+                        error: err
+                    });
+                } else {
+                    res.status(200).send({
+                        user: user
+                    });
+                }
+            });
         }       
+
+ 
+
+
     }
-    
+   
+  
+        
 };
-//new controllers
+
 
 
 module.exports = usersController;
