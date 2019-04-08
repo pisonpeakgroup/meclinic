@@ -35,7 +35,7 @@ const usersController = {
 
 
     retrievebyid: function (req, res) {
-        User.find({}, function (err, users) {
+        User.findById({}, function (err, users) {
             if (err) {
                 res.status(500).send({
                     message: 'An error occurred.',
