@@ -31,8 +31,27 @@ const usersController = {
                 }
             });
         }
+    },
+
+
+    retrievebyid: function (req, res) {
+        User.find({}, function (err, users) {
+            if (err) {
+                res.status(500).send({
+                    message: 'An error occurred.',
+                    error: err
+                });
+            } else {
+                res.status(200).send({
+                    success: 'true',
+                    message: 'user Successfully retrieved by I D',
+                });
+            }
+        });
     }
+
 };
 
+
+
 module.exports = usersController;
- 
